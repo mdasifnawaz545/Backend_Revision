@@ -1,0 +1,31 @@
+<%- include("include/head.ejs") %>
+<body class="bg-[#212121] flex flex-wrap items-center justify-evenly">
+    <div>
+        <form action="http://localhost:3000/new" method="get">
+        <button type="submit" class="p-2 bg-blue-300">Add New</button>
+    </form>
+    </div>
+    <%for(let d of data) {%>
+
+        <div class="w-64  flex flex-col items-center justify-center border-2 shadow-cyan-50 border-blue-400 text-white">
+            <figure>
+                <img src="<%= d.img %>" width="256px" height="100px" alt="">
+            </figure>
+            <h2><%= d.name%></h2>
+            <p><%=d.detail%></p>
+            <div class="flex gap-3">
+                <form action="http://localhost:3000/<%= d.id %>>/edit" method="get">
+                    <button class="p-2 bg-blue-600">Edit</button>
+
+                </form>
+                <form method="post" action="http://localhost:3000/<%= d.id %>/delete?_method=DELETE" >
+                    <button class="p-2 bg-red-500">Remove</button>
+
+                </form>
+            </div>
+        </div>
+
+        <% } %>
+
+</body>
+</html>

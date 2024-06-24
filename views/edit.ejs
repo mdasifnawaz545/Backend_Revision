@@ -1,0 +1,21 @@
+<%- include("include/head.ejs") %>
+<body class="bg-[#212121] flex flex-wrap items-center justify-evenly">
+   
+    <div class="w-64  flex flex-col items-center justify-center border-2 shadow-cyan-50 border-blue-400 text-white">
+        <figure>
+            <img src="<%= obj.img %>" width="256px" height="100px" alt="">
+        </figure>
+
+        <div class="flex gap-3 text-black">
+            <form action="http://localhost:3000/<%= obj.id %>>/edited?_method=PUT" method="post">
+                <input type="text" name="name" value="<%=obj.name %>">
+                <input type="text" name="detail" value="<%=obj.detail %>">
+
+        <button type="submit" class="p-2 bg-blue-300">Edit</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
