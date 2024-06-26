@@ -6,7 +6,8 @@ let data = require('./data/data')
 app.use(express.urlencoded({extended:true}));
 app.use(express.json())
 
-const mo=require('method-override')
+const mo=require('method-override');
+const { log } = require('console');
 app.use(mo('_method'))
 
 app.set("view engine", "ejs");
@@ -14,9 +15,11 @@ app.set("views", path.join(__dirname, "/views"))
 
 let port = 3000;
 
+
 app.listen(port, () => {
     console.log(`You contacted to port ${port}`)
 })
+
 
 app.get("/", (req, res) => {
     res.render("index.ejs", { data })
