@@ -1,0 +1,15 @@
+<% layout(`./layouts/boilerplate`) %>
+<div
+    style="min-height: 100vh;width: 100%;background-color: aliceblue;display: flex;gap:1rem;align-items: center;justify-content: center;">
+    <button style="padding: 0.5rem;border-radius: 2rem;background-color: green;">Verify
+    </button>
+    <form action="http://localhost:3000/warning"  method="get">
+    <button  style="padding: 0.5rem;border-radius: 2rem;background-color: yellow;">Warning
+    </button>
+</form>
+<form action="http://localhost:3000/failure" method="get">
+    <button style="padding: 0.5rem;border-radius: 2rem;background-color: red;">Error
+    </button>
+    
+</form>
+</div>
