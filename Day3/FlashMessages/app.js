@@ -14,12 +14,12 @@ let sessionConfiguration = {
 app.use(session(sessionConfiguration))
 app.use(flash());
 
-app.use((req, res, next) => {
-    req.flash('success', "Verified Successfully")
-    req.flash('failure', "Failure had Occured")
-    req.flash('warning', "Warning Message");
-    next();
-})
+// app.use((req, res, next) => {
+//     req.flash('success', "Verified Successfully")
+//     req.flash('failure', "Failure had Occured")
+//     req.flash('warning', "Warning Message");
+//     next();
+// })
 
 
 
@@ -61,4 +61,6 @@ app.get("/failure", (req, res) => {
     res.locals.verifyMessage=req.flash('failure')
     res.render('show.ejs',{name:req.session.name})
 });
+
+
 
